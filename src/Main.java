@@ -1,29 +1,13 @@
-// Source code: https://refactoring.guru/design-patterns/singleton/java/example#example-1
 public class Main {
 
+    // The constructor for the class Board is excessively big, most of the parameters are never used.
+    // Could you implement the Builder pattern to provide a simple interface?
     public static void main(String[] args) {
-        System.out.println("If you see the same value, then singleton was reused (yay!)" + "\n" +
-                "If you see different values, then 2 singletons were created (booo!!)" + "\n\n" +
-                "RESULT:" + "\n");
-        Thread threadFoo = new Thread(new ThreadFoo());
-        Thread threadBar = new Thread(new ThreadBar());
-        threadFoo.start();
-        threadBar.start();
+        System.out.println("Let's create a simple board");
+        Board board = new Board(12, 8, 20, null, 0, true, false, 0);
+
+        System.out.println("The created board has " + board.getHeight() * board.getWidth() + " cells");
     }
 
-    static class ThreadFoo implements Runnable {
-        @Override
-        public void run() {
-            Singleton singleton = Singleton.getInstance("FOO");
-            System.out.println(singleton.value);
-        }
-    }
 
-    static class ThreadBar implements Runnable {
-        @Override
-        public void run() {
-            Singleton singleton = Singleton.getInstance("BAR");
-            System.out.println(singleton.value);
-        }
-    }
 }
