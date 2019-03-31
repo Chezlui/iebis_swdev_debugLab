@@ -1,13 +1,10 @@
 public class Main {
 
-    // The constructor for the class Board is excessively big, most of the parameters are never used.
-    // Could you implement the Builder pattern to provide a simple interface?
+    // In the Gui interface there are 3 timers, we are afraid that if we keep adding timers
+    // the Gui class will become unmanageable. Implement an Observer pattern so the class FrequentEvents in Gui does not
+    // need to know about timers.
+    
     public static void main(String[] args) {
-        System.out.println("Let's create a simple board");
-        Board board = new Board(12, 8, 20, null, 0, true, false, 0);
-
-        System.out.println("The created board has " + board.getHeight() * board.getWidth() + " cells");
+        Gui gui = new Gui();
     }
-
-
 }
