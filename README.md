@@ -1,1 +1,1 @@
-# iebis_swdev_debugLab
+# iebis_swdev_designPatterns
